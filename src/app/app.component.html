@@ -1,0 +1,19 @@
+
+
+
+<form [formGroup]='mainGroup'>
+  <hello [config]='config1'></hello>
+  <hello [config]='config2'></hello>
+  <hello [config]='config3'></hello>
+  <p>control1: {{mainGroup.value.control_1}}</p>
+  <p>control2: {{mainGroup.value.control_2}}</p>
+  <p>control3: {{mainGroup.value.control_3}}</p>
+  <CommonSelect [config]='configSelect1'></CommonSelect>
+  <CommonSelect [config]='configSelect2'></CommonSelect>
+  <CommonSelect [config]='configSelect3'></CommonSelect>
+  <p>select1: {{mainGroup.value.select_1}}</p>
+  <p>select2: {{mainGroup.value.select_2}}</p>
+  <p>select3: {{mainGroup.value.select_3}}</p>
+
+</form>
+<button type='button' (click)="resetForm()">reset form</button>
