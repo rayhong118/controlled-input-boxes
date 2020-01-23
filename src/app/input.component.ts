@@ -3,7 +3,7 @@ import { OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators, ControlContainer } from '@angular/forms';
 
 @Component({
-  selector: 'hello',
+  selector: 'CommonInput',
   template: `
     <mat-form-field
     [formGroup]='controlContainer.control'
@@ -15,7 +15,7 @@ import { FormGroup, FormControl, Validators, ControlContainer } from '@angular/f
     `,
   styles: [`h1 { font-family: Lato; }`]
 })
-export class HelloComponent implements OnInit {
+export class InputComponent implements OnInit {
   @Input() config: any;
   constructor(private controlContainer: ControlContainer){
     
