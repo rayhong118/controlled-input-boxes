@@ -1,10 +1,7 @@
-
-
-
 <form [formGroup]='mainGroup'>
-  <hello [config]='config1'></hello>
-  <hello [config]='config2'></hello>
-  <hello [config]='config3'></hello>
+  <CommonInput [config]='config1'></CommonInput>
+  <CommonInput [config]='config2'></CommonInput>
+  <CommonInput [config]='config3'></CommonInput>
   <p>control1: {{mainGroup.value.control_1}}</p>
   <p>control2: {{mainGroup.value.control_2}}</p>
   <p>control3: {{mainGroup.value.control_3}}</p>
