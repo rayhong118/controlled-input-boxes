@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {
   FormGroup,
   FormBuilder,
@@ -10,7 +10,7 @@ import {
   templateUrl: './app.component.html',
   styleUrls: [ './app.component.css' ]
 })
-export class AppComponent  {
+export class AppComponent implements OnInit {
   name = 'Angular';
   config1 ={
     name: 'ctrl1',
@@ -62,6 +62,11 @@ export class AppComponent  {
 
   resetForm(){
     this.mainGroup.reset();
+  }
+
+  setValue(){
+    this.mainGroup.patchValue({select_1: ['one']});
+    this.mainGroup.patchValue({select_2: 'three', control_3:'two'});
   }
 }
 
