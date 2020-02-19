@@ -15,7 +15,7 @@ import { FormGroup, FormControl, Validators, ControlContainer } from '@angular/f
       required='{{!!config.required}}'
       formControlName='{{config.controllerName}}'
       >
-      <mat-option *ngIf="!config.required" [value]='null'>{{config.name}}</mat-option>
+      <mat-option *ngIf="!config.required" [value]='null'></mat-option>
       <mat-option [value]='one'>1</mat-option>
       <mat-option [value]='two'>2</mat-option>
       <mat-option [value]='three'>3</mat-option>
