@@ -58,6 +58,7 @@ export class AppComponent implements OnInit {
       select_2: '',
       select_3: '',
     })
+    this.mainGroup.updateValueAndValidity();
   }
 
   resetForm(){

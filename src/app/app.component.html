@@ -1,4 +1,4 @@
-<form [formGroup]='mainGroup'>
+<form [formGroup]='mainGroup' novalidate>
   <CommonInput [config]='config1'></CommonInput>
   <CommonInput [config]='config2'></CommonInput>
   <CommonInput [config]='config3'></CommonInput>
@@ -13,5 +13,7 @@
   <p>select3: {{mainGroup.value.select_3}}</p>
 
 </form>
+{{mainGroup.value|json}}
+{{mainGroup.valid}}
 <button type='button' (click)="resetForm()">reset form</button>
 <button type='button' (click)="setValue()">change value</button>
