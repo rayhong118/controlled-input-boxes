@@ -54,10 +54,11 @@ export class AppComponent implements OnInit {
       control_1: '',
       control_2: '',
       control_3: '',
-      select_1: '',
+      select_1: [['two']],
       select_2: '',
-      select_3: '',
+      select_3: 'three',
     })
+    this.mainGroup.patchValue({select_1: ['one','two']})
     this.mainGroup.updateValueAndValidity();
   }
 
