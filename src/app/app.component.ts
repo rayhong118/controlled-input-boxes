@@ -15,17 +15,20 @@ export class AppComponent implements OnInit {
   config1 ={
     name: 'ctrl1',
     placeholder: 'one',
-    controllerName: 'control_1'
+    controllerName: 'control_1',
+    className: 'input-lg'
   }
   config2 ={
     name: 'ctrl2',
     placeholder: 'two',
-    controllerName: 'control_2'
+    controllerName: 'control_2',
+
   }
   config3 ={
     name: 'something',
     placeholder: 'three',
-    controllerName: 'control_3'
+    controllerName: 'control_3',
+    className: 'input-sm'
   }
   
   configSelect1 = {
@@ -54,11 +57,12 @@ export class AppComponent implements OnInit {
       control_1: '',
       control_2: '',
       control_3: '',
-      select_1: [['two']],
+      select_1: [],
       select_2: '',
       select_3: 'three',
     })
-    this.mainGroup.patchValue({select_1: ['one','two']})
+
+    //this.mainGroup.patchValue({})
     this.mainGroup.updateValueAndValidity();
   }
 

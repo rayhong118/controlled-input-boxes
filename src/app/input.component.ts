@@ -7,13 +7,18 @@ import { FormGroup, FormControl, Validators, ControlContainer } from '@angular/f
   template: `
     <mat-form-field
     [formGroup]='controlContainer.control'
-    appearance='outline'>
+    appearance='outline'
+    [ngClass]="config.className || 'input-md'" >
       <mat-label>{{config.name}}</mat-label>
       <input matInput  formControlName='{{config.controllerName}}' 
       placeholder='{{config.placeholder}}'/>
     </mat-form-field>
     `,
-  styles: [`h1 { font-family: Lato; }`]
+  styles: [`
+  h1 { font-family: Lato; }
+  .input-lg{ width: 400px; }
+  .input-md{ width: 200px; }
+  .input-sm{ width: 100px; }`]
 })
 export class InputComponent implements OnInit {
   @Input() config: any;
