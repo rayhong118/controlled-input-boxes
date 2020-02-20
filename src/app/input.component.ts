@@ -8,7 +8,7 @@ import { FormGroup, FormControl, Validators, ControlContainer } from '@angular/f
     <mat-form-field
     [formGroup]='controlContainer.control'
     [appearance]="config.appearance || 'outline' "
-    [ngClass]="config.className || 'input-md'" >
+    [ngClass]="'input-' + config.className || 'md'" >
       <mat-label>{{config.name}}</mat-label>
       <input matInput  formControlName='{{config.controllerName}}' 
       placeholder='{{config.placeholder}}'/>
@@ -26,7 +26,7 @@ export class InputComponent implements OnInit {
     
   }
   ngOnInit() {
-    this[this.config.controllerName]=new FormControl('')
+    this[this.config.controllerName]=new FormControl('', this.config.required?[ Validators.required ]:[])
 
   }
 }

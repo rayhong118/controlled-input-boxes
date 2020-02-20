@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
     name: 'ctrl1',
     placeholder: 'one',
     controllerName: 'control_1',
-    className: 'input-lg'
+    className: 'lg'
   }
   config2 ={
     name: 'ctrl2',
@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
     name: 'something',
     placeholder: 'three',
     controllerName: 'control_3',
-    className: 'input-sm'
+    className: 'sm'
   }
   
   configSelect1 = {
@@ -60,7 +60,7 @@ export class AppComponent implements OnInit {
       control_3: '',
       select_1: [],
       select_2: '',
-      select_3: 'three',
+      select_3: '',
     })
 
     //this.mainGroup.patchValue({})
@@ -72,8 +72,8 @@ export class AppComponent implements OnInit {
   }
 
   setValue(){
-    this.mainGroup.patchValue({select_1: ['one']});
-    this.mainGroup.patchValue({select_2: 'three', control_3:'two'});
+    this.mainGroup.patchValue({select_1: [{text:'two', id:2}]});
+    this.mainGroup.patchValue({select_2: { id:3}, control_3:{id:2}});
   }
 }
 

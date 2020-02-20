@@ -14,6 +14,7 @@ import { FormGroup, FormControl, Validators, ControlContainer } from '@angular/f
       multiple='{{!!config.multiple}}'
       required='{{!!config.required}}'
       formControlName='{{config.controllerName}}'
+      [compareWith]="compareFn"
       >
       <mat-option *ngIf="!config.required" [value]='null'></mat-option>
       <mat-option [value]='one'>1</mat-option>
@@ -27,18 +28,25 @@ import { FormGroup, FormControl, Validators, ControlContainer } from '@angular/f
 })
 export class SelectComponent implements OnInit, AfterViewInit {
   @Input() config: any;
-  one = 'one';
-  two = 'two';
-  three = 'three';
+  one = {text:'one', id:1};
+  two = {text:'two', id:2};
+  three = {text:'three', id:3};
   constructor(private controlContainer: ControlContainer){
     
   }
   ngOnInit() {
-    this[this.config.controllerName] = new FormControl('');
+    this[this.config.controllerName] = 
+    this.config.required? new FormControl('',[ Validators.required ]): new FormControl('');
     this.controlContainer.control.updateValueAndValidity();
     console.log(this.config)
   }
   ngAfterViewInit(){
     this.controlContainer.control.updateValueAndValidity();
   }
+
+  compareFn( optionOne, optionTwo ) : boolean {
+
+    return optionOne && optionTwo ? optionOne.id === optionTwo.id : false;
+  }
+
 }
