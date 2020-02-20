@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
     name: 'ctrl2',
     placeholder: 'two',
     controllerName: 'control_2',
+    appearance: 'standard'
 
   }
   config3 ={

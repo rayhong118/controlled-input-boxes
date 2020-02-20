@@ -7,7 +7,7 @@ import { FormGroup, FormControl, Validators, ControlContainer } from '@angular/f
   template: `
     <mat-form-field
     [formGroup]='controlContainer.control'
-    appearance='outline'
+    [appearance]="config.appearance || 'outline' "
     [ngClass]="config.className || 'input-md'" >
       <mat-label>{{config.name}}</mat-label>
       <input matInput  formControlName='{{config.controllerName}}' 
